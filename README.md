@@ -31,11 +31,6 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 **1. Clone o Repositório**
 
-```bash
-git clone [https://github.com/SEU_USUARIO/meu_cine_app.git](https://github.com/SEU_USUARIO/meu_cine_app.git)
-cd meu_cine_app
-```
-
 **2. Instale as Dependências**
 
 ```bash
