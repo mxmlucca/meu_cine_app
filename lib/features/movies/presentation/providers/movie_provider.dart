@@ -7,21 +7,18 @@ class MovieProvider extends ChangeNotifier {
 
   MovieProvider({required this.getPopularMovies});
 
-  // Nossos estados
   bool _isLoading = false;
   List<Movie> _movies = [];
   String? _errorMessage;
 
-  // Getters para a UI acessar os estados de forma segura
   bool get isLoading => _isLoading;
   List<Movie> get movies => _movies;
   String? get errorMessage => _errorMessage;
 
-  // Ação que a UI vai chamar
   Future<void> fetchPopularMovies() async {
     _isLoading = true;
     _errorMessage = null;
-    notifyListeners(); // Avisa a UI que estamos carregando
+    notifyListeners();
 
     try {
       _movies = await getPopularMovies.call();
@@ -30,6 +27,6 @@ class MovieProvider extends ChangeNotifier {
     }
 
     _isLoading = false;
-    notifyListeners(); // Avisa a UI que terminamos (com sucesso ou erro)
+    notifyListeners();
   }
 }
