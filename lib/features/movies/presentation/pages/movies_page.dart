@@ -12,12 +12,10 @@ class MoviesPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Filmes Populares')),
       body: Consumer<MovieProvider>(
         builder: (context, provider, child) {
-          // Caso 1: Estamos carregando
           if (provider.isLoading) {
             return const Center(child: CircularProgressIndicator());
           }
 
-          // Caso 2: Ocorreu um erro
           if (provider.errorMessage != null) {
             return Center(
               child: Text(
@@ -27,12 +25,11 @@ class MoviesPage extends StatelessWidget {
             );
           }
 
-          // Caso 3: Sucesso! Temos os filmes
           return GridView.builder(
             padding: const EdgeInsets.all(8.0),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3, // 2 colunas
-              childAspectRatio: 0.7, // Proporção da imagem
+              crossAxisCount: 3,
+              childAspectRatio: 0.7,
               crossAxisSpacing: 8.0,
               mainAxisSpacing: 8.0,
             ),
@@ -40,13 +37,10 @@ class MoviesPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final movie = provider.movies[index];
               return GestureDetector(
-                // Nosso detector de toque
                 onTap: () {
-                  // Ação de navegar para a nova página
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      // Passamos o ID do filme para a próxima tela
                       builder: (context) => MovieDetailPage(movieId: movie.id),
                     ),
                   );

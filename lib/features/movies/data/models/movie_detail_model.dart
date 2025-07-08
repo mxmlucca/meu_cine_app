@@ -16,14 +16,15 @@ class MovieDetailModel extends MovieDetail {
       id: json['id'],
       title: json['title'],
       overview: json['overview'],
-      posterPath: json['poster_path'] != null
-          ? 'https://image.tmdb.org/t/p/w500${json['poster_path']}'
-          : 'https://via.placeholder.com/500x750.png?text=No+Image',
+      posterPath:
+          json['poster_path'] != null
+              ? 'https://image.tmdb.org/t/p/w500${json['poster_path']}'
+              : 'https://via.placeholder.com/500x750.png?text=No+Image',
       voteAverage: json['vote_average'].toDouble(),
-      // Mapeamos a lista de JSONs de gênero para nossa lista de GenreModel
-      genres: (json['genres'] as List)
-          .map((genre) => GenreModel.fromJson(genre))
-          .toList(),
+      genres:
+          (json['genres'] as List)
+              .map((genre) => GenreModel.fromJson(genre))
+              .toList(),
     );
   }
 }

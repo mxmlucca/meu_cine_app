@@ -14,8 +14,6 @@ class MovieModel extends Movie {
       id: json['id'],
       title: json['title'],
       overview: json['overview'],
-      // A API pode retornar o caminho do poster como nulo, então tratamos isso.
-      // E também precisamos do caminho completo da imagem.
       posterPath:
           json['poster_path'] != null
               ? 'https://image.tmdb.org/t/p/w500${json['poster_path']}'

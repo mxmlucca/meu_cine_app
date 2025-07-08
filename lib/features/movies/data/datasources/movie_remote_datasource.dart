@@ -2,8 +2,7 @@ import 'package:dio/dio.dart';
 import '../models/movie_model.dart';
 import '../models/movie_detail_model.dart';
 
-// URL base e chave da API. Lembre-se de colocar a SUA chave da API aqui!
-const String apiKey = '79f082b7c4cbc4357a2cac18ab8b7e37';
+const String apiKey = 'CHAVE API';
 const String popularMoviesUrl =
     'https://api.themoviedb.org/3/movie/popular?api_key=$apiKey';
 
@@ -22,13 +21,11 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     final response = await dio.get(popularMoviesUrl);
 
     if (response.statusCode == 200) {
-      // A API retorna uma chave 'results' que contém a lista de filmes
       final List<dynamic> results = response.data['results'];
       final List<MovieModel> movies =
           results.map((movieJson) => MovieModel.fromJson(movieJson)).toList();
       return movies;
     } else {
-      // Em um app real, trataríamos o erro de forma mais robusta
       throw Exception('Failed to load popular movies');
     }
   }

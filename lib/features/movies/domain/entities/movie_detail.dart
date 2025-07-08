@@ -3,8 +3,6 @@ import 'movie.dart';
 
 class MovieDetail extends Movie {
   final List<Genre> genres;
-  // Poderíamos adicionar outros campos como 'runtime', 'status', etc.
-  // Por agora, os gêneros são um ótimo exemplo.
 
   const MovieDetail({
     required super.id,

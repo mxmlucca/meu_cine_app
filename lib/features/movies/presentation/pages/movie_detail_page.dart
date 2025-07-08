@@ -15,9 +15,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
   @override
   void initState() {
     super.initState();
-    // Usamos o 'addPostFrameCallback' para garantir que o context está pronto
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Chamamos nosso provider para buscar os dados assim que a tela inicia
       Provider.of<MovieDetailProvider>(
         context,
         listen: false,
@@ -43,7 +41,6 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
             return const Center(child: Text('Nenhum detalhe encontrado.'));
           }
 
-          // UI de sucesso com os detalhes do filme
           final movie = provider.movieDetail!;
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
@@ -61,7 +58,6 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Usamos Expanded para o título não estourar a tela se for muito grande
                     Expanded(
                       child: Text(
                         movie.title,
@@ -72,10 +68,8 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                         ),
                       ),
                     ),
-                    // Nosso botão de favorito!
                     IconButton(
                       icon: Icon(
-                        // O ícone muda de acordo com o estado 'isFavorite'
                         provider.isFavorite
                             ? Icons.favorite
                             : Icons.favorite_border,
@@ -83,7 +77,6 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                         size: 32,
                       ),
                       onPressed: () {
-                        // A ação que chama nosso método no provider
                         provider.toggleFavoriteStatus();
                       },
                     ),
@@ -91,7 +84,6 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                 ),
                 const SizedBox(height: 8),
                 Wrap(
-                  // Usamos Wrap para os gêneros quebrarem a linha se necessário
                   spacing: 8.0,
                   children:
                       movie.genres
