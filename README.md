@@ -4,6 +4,12 @@
 
 Este projeto foi construído como parte de um processo de aprendizado, focando nas melhores práticas de mercado para desenvolvimento de aplicativos móveis robustos e escaláveis.
 
+## 🎥 Demonstração
+
+![GIF de Demonstração do App](https://github.com/user-attachments/assets/6eb99242-b055-4279-90ea-6a875c8fd999)
+
+*O GIF acima demonstra as principais funcionalidades: navegação pela lista de filmes, visualização de detalhes e o sistema de favoritos.*
+
 ## ✨ Features
 
 - [✅] **Lista de Filmes Populares:** Exibe uma grade com os filmes mais populares do momento consumindo a API do TMDb.
@@ -23,13 +29,17 @@ Este projeto foi estruturado utilizando **Clean Architecture**, dividindo as res
 - **Comunicação com API:** `Dio` (para consumo de API REST)
 - **Persistência Local:** `SharedPreferences`
 - **Igualdade de Objetos:** `Equatable`
-- **Testes:** _(A ser implementado)_
 
 ## 🚀 Como Rodar o Projeto
 
 Para rodar este projeto localmente, siga os passos abaixo:
 
 **1. Clone o Repositório**
+
+```bash
+git clone https://github.com/mxmlucca/meu_cine_app.git
+cd meu_cine_app
+```
 
 **2. Instale as Dependências**
 
