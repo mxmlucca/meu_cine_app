@@ -6,7 +6,7 @@ Este projeto foi construído como parte de um processo de aprendizado, focando n
 
 ## 🎥 Demonstração
 
-![GIF de Demonstração do App](https://github.com/user-attachments/assets/6eb99242-b055-4279-90ea-6a875c8fd999)
+![GIF](./assets/images/demo.gif)
 
 *O GIF acima demonstra as principais funcionalidades: navegação pela lista de filmes, visualização de detalhes e o sistema de favoritos.*
 
